@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingVertical: 7,
     width: '100%',
+    borderColor: '#3E3275',
+    borderBottomWidth: 1,
   },
 });
 
