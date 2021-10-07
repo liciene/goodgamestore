@@ -45,15 +45,17 @@ const renderItem = ({item}) => {
             <Text style={styles.descriptionName}>{item.name}</Text>
             <Text style={styles.descriptionPrice}>{`R$ ${item.price}`}</Text>
           </View>
-          <Button
-            style={styles.button}
-            mode="contained"
-            onPress={() => {
-              dataContext.addItem(item);
-            }}
-          >
-            <Text>Comprar</Text>
-          </Button>
+          <View style={styles.containerButton}>
+            <Button
+              style={styles.button}
+              mode="contained"
+              onPress={() => {
+                dataContext.addItem(item);
+              }}
+            >
+              <Text>Comprar</Text>
+            </Button>
+          </View>
         </View>
       </View>
 

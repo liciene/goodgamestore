@@ -19,13 +19,15 @@ const FooterComponent = () => {
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.containerAmount}>
-          <Text style={styles.descriptionAmount}>{`Itens: ${totalAmount}`}</Text>
-          <Text style={styles.descriptionParcialPrice}>{`Subtotal: R$ ${parcialPrice.toFixed(2)}`}</Text>
-        </View>
-        <View style={styles.containerTotal}>
-          <Text style={styles.descriptionFreight}>{`Frete: ${isFreeFreight ? 'Grátis': `R$${totalFreight.toFixed(2)}`}`}</Text>
-          <Text style={styles.descriptionPrice}>{`Total: R$ ${totalPrice.toFixed(2)}`}</Text>
+        <View>
+          <View style={styles.containerAmount}>
+            <Text style={styles.descriptionAmount}>{`Itens: ${totalAmount}`}</Text>
+            <Text style={styles.descriptionParcialPrice}>{`Subtotal: R$ ${parcialPrice.toFixed(2)}`}</Text>
+          </View>
+          <View style={styles.containerTotal}>
+            <Text style={styles.descriptionFreight}>{`Frete: ${isFreeFreight ? 'Grátis': `R$${totalFreight.toFixed(2)}`}`}</Text>
+            <Text style={styles.descriptionPrice}>{`Total: R$ ${totalPrice.toFixed(2)}`}</Text>
+          </View>
         </View>
       </View>
     </>

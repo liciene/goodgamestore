@@ -4,33 +4,16 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     alignItems: 'center',
-    backgroundColor: '#816AF7',
-    borderWidth: 2,
-    borderColor: '#fff',
+    backgroundColor: '#AFA2FA',
+    borderBottomWidth: 3,
+    borderRightWidth: 3,
+    borderColor: '#3E3275',
     paddingVertical: 7,
     margin: 7,
     borderRadius: 7,
     width: '90%',
     height: 120,
 
-  },
-  containerTotal: {
-    height: 40,
-    marginTop: 5,
-    alignItems: 'flex-end',
-    alignSelf: 'flex-end',
-    justifyContent: 'space-between',
-  },
-  descriptionFreight: {
-    fontSize: 14,
-    color: '#4320F5',
-    paddingRight: 30,
-  },
-  descriptionPrice: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#3E3275',
-    paddingRight: 30,
   },
   containerAmount: {
     height: 40,
@@ -49,6 +32,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#4320F5',
     paddingLeft: 50,
+  },
+    containerTotal: {
+    height: 40,
+    marginTop: 5,
+    alignItems: 'flex-end',
+    alignSelf: 'flex-end',
+    justifyContent: 'space-between',
+  },
+  descriptionFreight: {
+    fontSize: 14,
+    color: '#4320F5',
+    // paddingRight: 30,
+  },
+  descriptionPrice: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#3E3275',
+    // paddingRight: 30,
   },
 });
 

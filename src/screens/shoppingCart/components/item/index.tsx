@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Image, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {Text, IconButton} from 'react-native-paper';
 
 import styles from './styles';
 
@@ -14,7 +14,7 @@ import terraMediaSombrasDeMordor from '../../../../assets/terra-media-sombras-de
 import fifa18 from '../../../../assets/fifa-18.png';
 import horizonZeroDawn from '../../../../assets/horizon-zero-dawn.png';
 
-import {Item} from '../../../../provider';
+import {Item, DataContext} from '../../../../provider';
 
 const images:Record<string, any> = {
   ['super-mario-odyssey.png']: superMarioOdissey,
@@ -33,6 +33,7 @@ type Props = {
 }
 
 const ItemComponent = ({item}: Props) => {
+  const dataContext = useContext(DataContext);
   const imageDir = images[item.image];
 
   return (
@@ -40,14 +41,34 @@ const ItemComponent = ({item}: Props) => {
 
       <View key={item.id} style={styles.productContainer}>
         {imageDir && (
-          <Image source={imageDir} style={{width: 90, height: 90}} />
+          <Image source={imageDir} style={{width: 100, height: 100}} />
         )}
-        <View>
-          <Text style={styles.descriptionName}>{item.name}</Text>
-          <Text style={styles.descriptionPrice}>{item.price}</Text>
+        <View style={styles.textContainer}>
+          <View>
+            <Text style={styles.descriptionName}>{item.name}</Text>
+            <Text style={styles.descriptionPrice}>{item.price}</Text>
+          </View>
           <View style={styles.containerAmount}>
-            <Text style={styles.descriptionAmount}>{`Qtd: ${item.amount}`}</Text>
-            <Text style={styles.descriptionParcialPrice}>{`Subtotal: ${(item.amount * item.price).toFixed(2)}`}</Text>
+            <View style={styles.containerButton}>
+              <IconButton
+                onPress={() => {
+                  dataContext.addItem(item);
+                }}
+                icon="chevron-up"
+                style={styles.buttonMore}
+              />
+              <View style={styles.viewDescriptionAmount}>
+                <Text style={styles.descriptionAmount}>{`${item.amount}`}</Text>
+              </View>
+              <IconButton
+                onPress={() => {
+                  dataContext.deletItem(item);
+                }}
+                icon="chevron-down"
+                style={styles.buttonLess}
+              />
+            </View>
+            <Text style={styles.descriptionParcialPrice}>{`Substotal: ${(item.amount * item.price).toFixed(2)}`}</Text>
           </View>
         </View>
       </View>
